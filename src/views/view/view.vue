@@ -278,10 +278,10 @@ export default class extends Vue {
     this.finished = false
     console.log(res)
     if (res.success) {
-      this.$message.success(res.data)
+      this.$message.success(res.msg)
       this.$router.push('/complete')
     } else {
-      this.$message.error('提交失败，错误信息：' + res.data)
+      this.$message.error('提交失败，错误信息：' + res.msg)
     }
   }
 
