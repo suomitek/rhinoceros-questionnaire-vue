@@ -25,7 +25,7 @@ export interface IApiQuestionItem {
 export interface IApiNaireItem {
   naire_id: string,
   admin_id: string,
-  n_creattime: string,
+  n_createtime: string,
   n_deadline: string,
   n_title: string,
   n_status: string

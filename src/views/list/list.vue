@@ -17,9 +17,9 @@
           </router-link>
         </template>
       </el-table-column>
-      <el-table-column prop="n_creattime" label="创建时间" align="center">
+      <el-table-column prop="n_createtime" label="创建时间" align="center">
         <template slot-scope="{ row }">
-          {{ row.n_creattime | formatTime }}
+          {{ row.n_createtime | formatTime }}
         </template>
       </el-table-column>
       <el-table-column prop="n_deadline" label="截止时间" align="center">
