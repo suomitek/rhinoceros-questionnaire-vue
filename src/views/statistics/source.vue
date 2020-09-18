@@ -21,7 +21,7 @@
       <el-table-column label="序号" type="index" width="100" align="center" />
       <el-table-column label="创建时间" min-width="160">
         <template slot-scope="{ row }">
-          {{ row.s_creattime | formatTime }}
+          {{ row.s_createtime | formatTime }}
         </template>
       </el-table-column>
       <el-table-column
