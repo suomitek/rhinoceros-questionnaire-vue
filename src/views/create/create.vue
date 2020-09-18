@@ -11,7 +11,14 @@
 
       <div class="add-option">
         <el-button type="primary" @click="addOption(questionType.SINGLE_CHOICE)">单选题</el-button>
+        <el-button type="primary" @click="addOption(questionType.SINGLE_CHOICE)">单选带子选</el-button>
+        <el-button type="primary" @click="addOption(questionType.SINGLE_CHOICE)">单选带填空</el-button>
         <el-button type="primary" @click="addOption(questionType.MULTIPLE_CHOICE)">多选题</el-button>
+        <el-button type="primary" @click="addOption(questionType.SINGLE_CHOICE)">单选带子选</el-button>
+        <el-button type="primary" @click="addOption(questionType.SINGLE_CHOICE)">多选带填空</el-button>
+        <el-button type="primary" @click="addOption(questionType.SINGLE_CHOICE)">不选填空</el-button>
+        <el-button type="primary" @click="addOption(questionType.SINGLE_CHOICE)">单选填空</el-button>
+        <el-button type="primary" @click="addOption(questionType.SINGLE_CHOICE)">多选填空</el-button>
         <el-button type="primary" @click="addOption(questionType.TEXT_QUESTION)">文本题</el-button>
       </div>
 
