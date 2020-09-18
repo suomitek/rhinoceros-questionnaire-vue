@@ -215,7 +215,7 @@ export default class StatisticsComponent extends Vue {
   async fetchData () {
     this.loading = true
     const res = await NaireAction.statis({
-      n_id: this.$route.params.id
+      naire_id: this.$route.params.id
     })
     this.loading = false
     if (res.success) {

@@ -199,7 +199,7 @@ export default class NavBar extends Vue {
   async fetchData () {
     this.loading = true
     const res = await NaireAction.detail({
-      n_id: this.$route.params.id,
+      naire_id: this.$route.params.id,
       type: 'normal'
     })
     this.loading = false

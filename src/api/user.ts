@@ -6,7 +6,7 @@ import { IApiUserInfo, IApiClassItem } from '@/api/types'
  * @param data
  */
 export const getId = (data: {
-  n_id: string,
+  naire_id: string,
   name: string,
   identity: string
 }) => {

@@ -11,7 +11,7 @@
       />
       <el-table-column prop="n_title" label="问卷名称" align="left">
         <template slot-scope="{ row }">
-          <router-link tag="a" :to="`./view/${row.n_id}`">
+          <router-link tag="a" :to="`./view/${row.naire_id}`">
             {{ row.n_title }}
             <el-tag v-if="isExpired(row.n_deadline)" class="ml-10" size="mini" type="danger">已截止</el-tag>
           </router-link>
@@ -112,7 +112,7 @@ export default class NavBar extends Vue {
         this.$router.push({
           name: 'view',
           params: {
-            id: row.n_id
+            id: row.naire_id
           }
         })
         break
@@ -124,7 +124,7 @@ export default class NavBar extends Vue {
         this.$router.push({
           name: 'submitStatistics',
           params: {
-            id: row.n_id
+            id: row.naire_id
           }
         })
         break
@@ -132,7 +132,7 @@ export default class NavBar extends Vue {
         this.$router.push({
           name: 'edit',
           params: {
-            id: row.n_id
+            id: row.naire_id
           }
         })
         break
@@ -163,7 +163,7 @@ export default class NavBar extends Vue {
 
   private async deleteNaire (nIds: string) {
     const res = await NaireAction.del({
-      n_id: nIds
+      naire_id: nIds
     })
     if (res.success) {
       this.$message.success('删除成功')
@@ -178,7 +178,7 @@ export default class NavBar extends Vue {
       type: 'warning'
     })
       .then(async () => {
-        this.deleteNaire(row.n_id)
+        this.deleteNaire(row.naire_id)
       })
       .catch(() => {})
   }
@@ -188,7 +188,7 @@ export default class NavBar extends Vue {
       type: 'warning'
     })
       .then(async () => {
-        const rowIds = this.selectContent.map(({ n_id: id }) => id).join(',')
+        const rowIds = this.selectContent.map(({ naire_id: id }) => id).join(',')
         this.deleteNaire(rowIds)
       })
       .catch(() => {})
@@ -202,7 +202,7 @@ export default class NavBar extends Vue {
     this.$router.push({
       name: 'statisticsResult',
       params: {
-        id: row.n_id
+        id: row.naire_id
       }
     })
   }
@@ -214,7 +214,7 @@ export default class NavBar extends Vue {
   async changeStatus (row: IApiNaireItem) {
     this.loading = true
     const res = await NaireAction.changeStatus({
-      n_id: row.n_id
+      naire_id: row.naire_id
     })
     this.loading = false
     if (res.success) {

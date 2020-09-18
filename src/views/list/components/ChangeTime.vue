@@ -42,7 +42,7 @@ export default class extends Vue {
       return this.$message.warning('请填写截止时间！')
     }
     const res = await NaireAction.changeTime({
-      n_id: this.model.n_id,
+      naire_id: this.model.naire_id,
       n_deadline: this.deadline.getTime()
     })
     if (res.success) {

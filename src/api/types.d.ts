@@ -23,7 +23,7 @@ export interface IApiQuestionItem {
 
 // 问卷格式
 export interface IApiNaireItem {
-  n_id: string,
+  naire_id: string,
   a_id: string,
   n_creattime: string,
   n_deadline: string,

@@ -152,7 +152,7 @@ export default class extends Vue {
   async crossAnalysis () {
     this.loading = true
     const res = await NaireAction.crossanalysis({
-      n_id: this.$route.params.id,
+      naire_id: this.$route.params.id,
       ...this.searchParams
     })
     this.loading = false
@@ -175,7 +175,7 @@ export default class extends Vue {
   async fetchQuestionData () {
     this.loading = true
     const res = await NaireAction.questions({
-      n_id: this.$route.params.id
+      naire_id: this.$route.params.id
     })
     this.loading = false
     if (res.success) {

@@ -82,7 +82,7 @@ export default class extends Vue {
     const token = UserModule.token
     const nId = this.$route.params.id
     const pageSize = this.excelRowsPerTable
-    window.open(`${url}/naire/sourcedataExport?token=${token}&n_id=${nId}&current=${index}&page_size=${pageSize}`)
+    window.open(`${url}/naire/sourcedataExport?token=${token}&naire_id=${nId}&current=${index}&page_size=${pageSize}`)
   }
 
   onChangePage (val: number) {
@@ -123,7 +123,7 @@ export default class extends Vue {
   async fetchData () {
     this.loading = true
     const res = await NaireAction.sourceData({
-      n_id: this.$route.params.id,
+      naire_id: this.$route.params.id,
       ...this.pageParams
     })
     this.loading = false

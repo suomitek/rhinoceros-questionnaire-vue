@@ -141,7 +141,7 @@ export default class extends Vue {
       if (!valid) return
       // 查找用户，返回用户id
       const res = await UserAction.getId({
-        n_id: this.naire.n_id,
+        naire_id: this.naire.naire_id,
         name: this.userInfo.name,
         identity: this.userInfo.identity.toUpperCase()
       })
@@ -237,13 +237,13 @@ export default class extends Vue {
       return
     }
     this.finished = true
-    const nId = this.naire.n_id
+    const nId = this.naire.naire_id
     const result: any[] = []
 
     this.naire.topic.forEach((question: Questionnaire.IQuestionItem, index: number) => {
       if (question.type === '单选') {
         const curQues = {
-          n_id: nId,
+          naire_id: nId,
           user_id: this.userId,
           q_id: question.q_id,
           o_id: question.selectContent,
@@ -252,7 +252,7 @@ export default class extends Vue {
         result.push(curQues)
       } else if (question.type === '多选') {
         const curQues = {
-          n_id: nId,
+          naire_id: nId,
           user_id: this.userId,
           q_id: question.q_id,
           o_id: question.selectMultipleContent,
@@ -261,7 +261,7 @@ export default class extends Vue {
         result.push(curQues)
       } else {
         const curQues = {
-          n_id: nId,
+          naire_id: nId,
           user_id: this.userId,
           q_id: question.q_id,
           o_id: '',
@@ -288,7 +288,7 @@ export default class extends Vue {
   async fetchData () {
     this.loading = true
     const res = await NaireAction.detail({
-      n_id: this.$route.params.id,
+      naire_id: this.$route.params.id,
       type: 'normal'
     })
     this.loading = false

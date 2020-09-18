@@ -95,14 +95,14 @@ export default class extends Vue {
     const api = process.env.VUE_APP_BASE_API
     const nId = this.$route.params.id
     const token = UserModule.token
-    window.location.href = `${api}/naire/exportStatis?token=${token}&n_id=${nId}`
+    window.location.href = `${api}/naire/exportStatis?token=${token}&naire_id=${nId}`
   }
 
   // 查看回收情况 数据获取
   async fetchData () {
     this.loading = true
     const res = await NaireAction.submitStatistic({
-      n_id: this.$route.params.id,
+      naire_id: this.$route.params.id,
       ...this.pageParams,
       ...this.searchParams
     })

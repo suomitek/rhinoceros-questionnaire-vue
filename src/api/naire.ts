@@ -28,7 +28,7 @@ export const create = (data: {
  * @param data
  */
 export const statis = (data: {
-  n_id: string
+  naire_id: string
 }) => {
   return request.post<IApiNaireStatisticResult>('/naire/statis', data, {
     headers: {
@@ -43,7 +43,7 @@ export const statis = (data: {
  */
 
 export const sourceData = (data: {
-  n_id: string
+  naire_id: string
   current: number,
     page_size: number
 }) => {
@@ -56,7 +56,7 @@ export const sourceData = (data: {
  */
 
 export const crossanalysis = (data: {
-  n_id: string
+  naire_id: string
   x_id: number | string,
   y_id: number | string
 }) => {
@@ -72,7 +72,7 @@ export const crossanalysis = (data: {
  * @param data
  */
 export const questions = (data: {
-  n_id: string
+  naire_id: string
 }) => {
   return request.post<any>('/naire/questions', data, {
     headers: {
@@ -86,7 +86,7 @@ export const questions = (data: {
  * @param data
  */
 export const detail = (data: {
-  n_id: string
+  naire_id: string
   type: 'normal'
 }) => {
   return request.post<any>('/naire/detail', data, {
@@ -117,7 +117,7 @@ export const submit = (data: {
  * @param data
  */
 export const changeStatus = (data: {
-  n_id: string
+  naire_id: string
 }) => {
   return request.get<any>('/naire/changeStatus', data)
 }
@@ -127,7 +127,7 @@ export const changeStatus = (data: {
  * @param data
  */
 export const submitStatistic = (data: {
-  n_id: string,
+  naire_id: string,
   current: number,
   page_size: number,
   status: number,
@@ -141,7 +141,7 @@ export const submitStatistic = (data: {
  * @param data
  */
 export const changeTime = (data: {
-  n_id: string
+  naire_id: string
   n_deadline: number
 }) => {
   return request.post<any>('/naire/changeTime', data)
@@ -152,7 +152,7 @@ export const changeTime = (data: {
  * @param data
  */
 export const del = (data: {
-  n_id: string
+  naire_id: string
 }) => {
   return request.get<any>('/naire/del', data)
 }
