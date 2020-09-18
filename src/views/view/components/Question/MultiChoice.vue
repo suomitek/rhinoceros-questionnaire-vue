@@ -4,7 +4,7 @@
       <el-checkbox
         v-for="(option, opIndex) in topic.options"
         :key="opIndex"
-        :label="option.o_id"
+        :label="option.options_id"
         class="option-item"
       >
         <span>{{ option.content }}</span>

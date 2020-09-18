@@ -28,7 +28,7 @@ declare namespace Questionnaire {
 }
 
   export interface IOptionItem {
-    o_id?: string,
+    options_id?: string,
     content: string,
     desc: string,
     image: string,

@@ -181,7 +181,7 @@ export default class extends Vue {
         }
         if (item.type === questionType.SINGLE_CHOICE) {
           const _isAddtion = item.options && item.options.some((option, index) => {
-            return option.isAddition && option.o_id === item.selectContent
+            return option.isAddition && option.options_id === item.selectContent
           })
           // 有附加理由的情况
           if (_isAddtion && !(item.additional && item.additional.trim().length > 0)) {
@@ -246,7 +246,7 @@ export default class extends Vue {
           naire_id: nId,
           user_id: this.userId,
           q_id: question.q_id,
-          o_id: question.selectContent,
+          options_id: question.selectContent,
           o_addition: question.additional ? question.additional.trim() : ''
         }
         result.push(curQues)
@@ -255,7 +255,7 @@ export default class extends Vue {
           naire_id: nId,
           user_id: this.userId,
           q_id: question.q_id,
-          o_id: question.selectMultipleContent,
+          options_id: question.selectMultipleContent,
           o_addition: question.additional ? question.additional.trim() : ''
         }
         result.push(curQues)
@@ -264,7 +264,7 @@ export default class extends Vue {
           naire_id: nId,
           user_id: this.userId,
           q_id: question.q_id,
-          o_id: '',
+          options_id: '',
           o_addition: question.selectContent ? question.selectContent.trim() : ''
         }
         result.push(curQues)

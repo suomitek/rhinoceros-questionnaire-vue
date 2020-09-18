@@ -4,12 +4,12 @@
       <el-radio
         v-for="(option, opIndex) in topic.options"
         :key="opIndex"
-        :label="option.o_id"
+        :label="option.options_id"
         class="option-item"
       >
         <span>{{ option.content }}</span>
         <el-input
-          v-show="option.isAddition && topic.selectContent === option.o_id "
+          v-show="option.isAddition && topic.selectContent === option.options_id "
           v-if="option.isAddition"
           v-model="topic.additional"
           placeholder="请输入理由"

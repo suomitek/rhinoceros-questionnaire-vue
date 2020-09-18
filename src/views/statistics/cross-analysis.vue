@@ -104,7 +104,7 @@ export default class extends Vue {
       }
     } = {}
     this.statisData.row.forEach((row) => {
-      rows[row.o_id] = { id: row.o_value }
+      rows[row.options_id] = { id: row.o_value }
     })
     // 遍历全部的 x+y 的组合
     const allResult: any[] = []
@@ -112,15 +112,15 @@ export default class extends Vue {
       const _obj: {
         type: number,
         [key: string]: any
-      } = { type: rows[row.o_id].id } // 每一行数据初始对象
+      } = { type: rows[row.options_id].id } // 每一行数据初始对象
       let sum = 0 // 小计
       this.statisData.column.forEach((column) => {
         // 格式为： 'y_id, x_id'
-        // 对应为： `${column.o_id}_${row.o_id}`
+        // 对应为： `${column.options_id}_${row.options_id}`
         // 通过循环全部结果，从而判断不存在的结果，赋值为 0
-        const curItem = curResult[`${column.o_id}_${row.o_id}`] // 当前组合的对象
+        const curItem = curResult[`${column.options_id}_${row.options_id}`] // 当前组合的对象
         const curCount: number = !curItem ? 0 : Number(curItem.count) // 当前组合对象的数量
-        _obj[`y_${column.o_id}`] = curCount // 生成 y_id 对应的数据列
+        _obj[`y_${column.options_id}`] = curCount // 生成 y_id 对应的数据列
         sum += curCount // 小计
       })
       // 将一行数据添加
@@ -143,7 +143,7 @@ export default class extends Vue {
     return columns.map((item, index) => {
       return {
         title: item.o_value,
-        key: `y_${item.o_id}`, // 表头与数据 采用 y_<y_id> 来关联
+        key: `y_${item.options_id}`, // 表头与数据 采用 y_<y_id> 来关联
         width: 100
       }
     })
