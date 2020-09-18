@@ -41,7 +41,7 @@ export interface IApiNaireStatisticResult {
 
 // 用户信息
 export interface IApiUserInfo {
-  u_id: string,
+  user_id: string,
   name: string,
   isFinished: boolean
 }

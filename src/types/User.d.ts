@@ -1,6 +1,6 @@
 declare namespace User {
   export interface IUser {
-    u_id?: string,
+    user_id?: string,
     u_number: string,
     u_identity: string,
     u_name: string,

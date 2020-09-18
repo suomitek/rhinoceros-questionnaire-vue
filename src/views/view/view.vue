@@ -147,7 +147,7 @@ export default class extends Vue {
       })
       if (res.success) {
         this.isLogin = true
-        this.userId = res.data!.u_id
+        this.userId = res.data!.user_id
         if (res.data!.isFinished) {
           this.$notify({
             title: '已完成问卷',
@@ -244,7 +244,7 @@ export default class extends Vue {
       if (question.type === '单选') {
         const curQues = {
           n_id: nId,
-          u_id: this.userId,
+          user_id: this.userId,
           q_id: question.q_id,
           o_id: question.selectContent,
           o_addition: question.additional ? question.additional.trim() : ''
@@ -253,7 +253,7 @@ export default class extends Vue {
       } else if (question.type === '多选') {
         const curQues = {
           n_id: nId,
-          u_id: this.userId,
+          user_id: this.userId,
           q_id: question.q_id,
           o_id: question.selectMultipleContent,
           o_addition: question.additional ? question.additional.trim() : ''
@@ -262,7 +262,7 @@ export default class extends Vue {
       } else {
         const curQues = {
           n_id: nId,
-          u_id: this.userId,
+          user_id: this.userId,
           q_id: question.q_id,
           o_id: '',
           o_addition: question.selectContent ? question.selectContent.trim() : ''

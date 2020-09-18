@@ -81,7 +81,7 @@ import { ElForm } from 'element-ui/types/form'
 import { defaultUserData } from '@/api/default'
 
 interface IUserForm extends User.IUser{
-  u_id: string
+  user_id: string
 }
 
 @Component
@@ -89,7 +89,7 @@ export default class extends Vue {
   @Prop() visible!: boolean
   @Prop() model!: IUserForm
   private form: IUserForm = {
-    u_id: '',
+    user_id: '',
     ...defaultUserData
   }
   private rules: any = {

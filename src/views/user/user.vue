@@ -168,7 +168,7 @@ export default class extends Vue {
       type: 'warning'
     })
       .then(() => {
-        this.delUser(row.u_id || '')
+        this.delUser(row.user_id || '')
       })
       .catch(() => {})
   }
@@ -179,7 +179,7 @@ export default class extends Vue {
 
   private async delUser (nIds: string) {
     const res = await UserAction.del({
-      u_id: nIds
+      user_id: nIds
     })
     if (res.success) {
       this.$message.success(`成功删除${res.data}个用户`)
@@ -194,7 +194,7 @@ export default class extends Vue {
       type: 'warning'
     })
       .then(async () => {
-        const rowIds = this.selectContent.map(({ u_id: id }) => id).join(',')
+        const rowIds = this.selectContent.map(({ user_id: id }) => id).join(',')
         this.delUser(rowIds)
       })
       .catch(() => {})

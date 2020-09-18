@@ -24,7 +24,7 @@
       </el-form-item>
     </el-form>
     <el-table :data="list">
-      <el-table-column prop="u_id" label="用户ID" />
+      <el-table-column prop="user_id" label="用户ID" />
       <el-table-column prop="u_number" label="工号" />
       <el-table-column prop="u_name" label="姓名" />
       <el-table-column label="性别">

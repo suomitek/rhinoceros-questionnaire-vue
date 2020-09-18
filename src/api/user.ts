@@ -44,7 +44,7 @@ export const addUser = (data: {
  * @param data
  */
 export const updateUser = (data: {
-  u_id: string,
+  user_id: string,
   u_name: string,
   u_class: string,
   u_number: string,
@@ -87,7 +87,7 @@ export const list = (data: {
  * @param data
  */
 export const del = (data: {
-  u_id: string
+  user_id: string
 }) => {
   return request.post<any>('/user/del', data)
 }
