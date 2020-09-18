@@ -245,7 +245,7 @@ export default class extends Vue {
         const curQues = {
           naire_id: nId,
           user_id: this.userId,
-          q_id: question.q_id,
+          question_id: question.question_id,
           options_id: question.selectContent,
           o_addition: question.additional ? question.additional.trim() : ''
         }
@@ -254,7 +254,7 @@ export default class extends Vue {
         const curQues = {
           naire_id: nId,
           user_id: this.userId,
-          q_id: question.q_id,
+          question_id: question.question_id,
           options_id: question.selectMultipleContent,
           o_addition: question.additional ? question.additional.trim() : ''
         }
@@ -263,7 +263,7 @@ export default class extends Vue {
         const curQues = {
           naire_id: nId,
           user_id: this.userId,
-          q_id: question.q_id,
+          question_id: question.question_id,
           options_id: '',
           o_addition: question.selectContent ? question.selectContent.trim() : ''
         }

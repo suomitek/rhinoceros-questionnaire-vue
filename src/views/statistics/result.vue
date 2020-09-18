@@ -57,7 +57,7 @@
         class="echarts"
       >
         <div
-          :id="'chart-'+ question.q_id"
+          :id="'chart-'+ question.question_id"
           :style="{ width: '100%', height: question.options.length * 40 + 50 + 'px' }"
         />
       </div>
@@ -79,7 +79,7 @@ import { exportJson2Excel } from '@/utils/excel'
 //  结果统计题目
 interface StatisticQuestionItem extends Questionnaire.IQuestionItem {
   charts: string[],
-  q_id: string
+  question_id: string
 }
 
 @Component({
@@ -139,13 +139,13 @@ export default class StatisticsComponent extends Vue {
           tempObj.Axis.push(content)
         })
         tempObj.series = item.charts
-        this.chartsOptions[item.q_id] = { ...tempObj }
+        this.chartsOptions[item.question_id] = { ...tempObj }
       }
     })
     this.$nextTick(() => {
       questions.forEach((item: StatisticQuestionItem) => {
         if (item.type === questionType.SINGLE_CHOICE || item.type === questionType.MULTIPLE_CHOICE) {
-          this.drawChart(Number(item.q_id))
+          this.drawChart(Number(item.question_id))
         }
       })
     })

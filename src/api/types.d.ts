@@ -15,7 +15,7 @@ type AnswerItem = {
 }
 
 export interface IApiQuestionItem {
-  q_id: number,
+  question_id: number,
   q_content: string,
   type: string,
   answerList: AnswerItem[]

@@ -15,7 +15,7 @@ declare namespace Questionnaire {
   export type QuestionType = '单选' | '多选' | '文本'
 
   export interface IQuestionItem {
-    q_id?: string,
+    question_id?: string,
     description: string,
     isRequired: boolean,
     options?: IOptionItem[],

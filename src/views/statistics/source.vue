@@ -113,7 +113,7 @@ export default class extends Vue {
     questions.forEach((item: IApiQuestionItem, index: number) => {
       baseColumns.push({
         title: item.q_content,
-        key: 'q_' + item.q_id, // 表头与数据 采用 q_<q_id> 来关联
+        key: 'q_' + item.question_id, // 表头与数据 采用 q_<question_id> 来关联
         width: 200
       })
     })
