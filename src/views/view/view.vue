@@ -138,7 +138,9 @@ export default class extends Vue {
   handleSubmit () {
     const ref = this.$refs['userInfo'] as ElForm
     ref.validate(async (valid) => {
-      if (!valid) return
+      if (!valid) {
+        return
+      }
       // 查找用户，返回用户id
       const res = await UserAction.getId({
         naire_id: this.naire.naire_id,
@@ -154,7 +156,13 @@ export default class extends Vue {
             message: '您已完成该问卷，请勿重复提交！',
             type: 'warning'
           })
-          this.$router.push('/complete')
+          this.$router.push({
+            name: 'complete',
+            params: {
+              level: res.data!.level,
+              level_info: res.data!.level_info
+            }
+          })
         } else {
           this.$notify({
             title: '欢迎您 ' + res.data!.name,
@@ -279,7 +287,10 @@ export default class extends Vue {
     console.log(res)
     if (res.success) {
       this.$message.success(res.msg)
-      this.$router.push('/complete')
+      this.$router.push({
+        name: 'complete',
+        params: res.data
+      })
     } else {
       this.$message.error('提交失败，错误信息：' + res.msg)
     }

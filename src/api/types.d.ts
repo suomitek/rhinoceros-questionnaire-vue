@@ -43,7 +43,9 @@ export interface IApiNaireStatisticResult {
 export interface IApiUserInfo {
   user_id: string,
   name: string,
-  isFinished: boolean
+  isFinished: boolean,
+  level: number,
+  level_info: string
 }
 
 // 部门列表
