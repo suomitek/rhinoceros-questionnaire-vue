@@ -7,7 +7,7 @@
       <div class="content">
         <p>您填写的表单已经提交成功。</p>
         <p v-if="result">
-          {{result.level_info}}
+          <el-alert type="success" :title="result.level_info" :closable="false" show-icon center></el-alert>
         </p>
       </div>
     </div>
