@@ -6,7 +6,9 @@
       </div>
       <div class="content">
         <p>您填写的表单已经提交成功。</p>
-        <p>{{result.level_info}}</p>
+        <p v-if="result">
+          {{result.level_info}}
+        </p>
       </div>
     </div>
     <div class="footer">
