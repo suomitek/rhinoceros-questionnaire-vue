@@ -6,6 +6,7 @@
       </div>
       <div class="content">
         <p>您填写的表单已经提交成功。</p>
+        <p>{{result.level_info}}</p>
       </div>
     </div>
     <div class="footer">
@@ -19,6 +20,13 @@ import { Component, Vue } from 'vue-property-decorator'
 
 @Component
 export default class CompleteComp extends Vue {
+  private result: any = null
+  fetchData () {
+    this.result = this.$route.params
+  }
+  public mounted () {
+    this.fetchData()
+  }
 }
 </script>
 
