@@ -159,7 +159,7 @@ export default class extends Vue {
           this.$router.push({
             name: 'complete',
             params: {
-              level: res.data!.level,
+              level: res.data!.level + '',
               level_info: res.data!.level_info
             }
           })
